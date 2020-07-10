@@ -6,7 +6,7 @@ namespace RoomDetailGenerator
     {
         static void Main(string[] args)
         {
-            bool proceed;
+            var cont = "";
             do
             {
                 Console.WriteLine("Enter Length: ");
@@ -24,7 +24,7 @@ namespace RoomDetailGenerator
                 {
                     Console.WriteLine("One of your inputs was invalid. Please try again.");
                     Console.WriteLine("");
-                    proceed = true;
+                    cont = "Y";
                 }
                 else
                 {
@@ -37,19 +37,9 @@ namespace RoomDetailGenerator
                     Console.WriteLine($"Volume: {volume} cubic ft.");
                     Console.WriteLine("");
                     Console.WriteLine("Continue? (y/n)");
-                    string cont = Console.ReadLine().ToUpper();
-
-                    if (cont == "Y")
-                    {
-                        proceed = true;
-                        Console.WriteLine("");
-                    }
-                    else
-                    {
-                        proceed = false;
-                    }
+                    cont = Console.ReadLine().ToUpper();
                 }                
-            } while (proceed == true);
+            } while (cont == "Y");
         }
     }
 }
